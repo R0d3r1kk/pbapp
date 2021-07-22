@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.root {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
+  background-color: #282c34;
+  width: 100%;
+  height: 100vh;
+  transition: all 2s ease-in;
+}
+
+.imageList {
+  /* Promote the list into its own layer in Chrome. This cost memory, but helps keep FPS high.*/
+  transition: all 2s ease-in;
+  transform: translateZ(90) !important;
+}
+
+.listTitle{
+  color: white !important;
+  font-weight: bold !important;
+  font-size: x-large !important;
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+.listFooter{
+  color: white !important;
+  font-weight: bold !important;
+  font-size: small !important;
+  float: right;
+}
+
+.slctpages{
+  color: white !important;
+  font-weight: bold !important;
+  font-size: x-large !important;
+  margin-left: 16px;
+}
+
+.slctLabel{
+  margin-left: 16px;
+}
+
+.btnAdd{
+  background-color: white !important;
+  float: right;
+}
+
+.loader{
+  z-index: 9999 !important;
+  position: absolute;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
