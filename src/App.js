@@ -4,7 +4,7 @@ import {
   Avatar,
   Backdrop,
   CircularProgress,
-  Container,
+  Fade,
   FormControl,
   IconButton,
   ImageList,
@@ -138,7 +138,7 @@ function App(props) {
   };
 
   return (
-    <Container className="root">
+    <div className="root">
       <ImageList className="imageList" >
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader  className="listTitle" component="div">Users</ListSubheader>
@@ -199,6 +199,7 @@ function App(props) {
           </Backdrop>
         </ImageListItem>
       {users.map((item) => (
+        <Fade in={!loading}>
        <User 
           key={item.id}
           userid={item.id}
@@ -206,12 +207,13 @@ function App(props) {
           name={item.first_name + " " + item.last_name}
           email={item.email}
        />
+       </Fade>
       ))}
       <ImageListItem key="Subfooter" cols={2} style={{ height: 'auto' }}>
           <ListSubheader className="listFooter" component="div">Total: {total}</ListSubheader>
         </ImageListItem>
     </ImageList>
-  </Container>
+  </div>
   );
 }
 

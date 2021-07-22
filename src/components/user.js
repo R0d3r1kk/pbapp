@@ -90,8 +90,7 @@ function User(props){
       };
       
     return (
-      <Tooltip 
-        interactive 
+      <Tooltip  
         TransitionComponent={Fade} 
         TransitionProps={{ timeout: 500 }} 
         title={props.email}
