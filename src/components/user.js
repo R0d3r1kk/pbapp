@@ -3,9 +3,11 @@ import './user.css'
 import {
     Backdrop,
     CircularProgress,
+    Fade,
     ImageListItem,
     ImageListItemBar,
-    Snackbar
+    Snackbar,
+    Tooltip
 } from '@material-ui/core';
 import React, { useEffect, useState } from "react";
 import {createUser, updateUser} from '../helpers/ApiHelper'
@@ -88,6 +90,12 @@ function User(props){
       };
       
     return (
+      <Tooltip 
+        interactive 
+        TransitionComponent={Fade} 
+        TransitionProps={{ timeout: 500 }} 
+        title={props.email}
+        >
         <ImageListItem 
             key={props.key}  
             className="listitem" 
@@ -127,7 +135,8 @@ function User(props){
             <Backdrop  open={loading} className="loader">
                 <CircularProgress color="inherit" />
             </Backdrop>
-        </ImageListItem>
+          </ImageListItem>
+        </Tooltip>
       );
 }
 

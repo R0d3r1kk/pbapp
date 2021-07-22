@@ -4,6 +4,7 @@ import {
   Avatar,
   Backdrop,
   CircularProgress,
+  Container,
   FormControl,
   IconButton,
   ImageList,
@@ -137,7 +138,7 @@ function App(props) {
   };
 
   return (
-    <div className="root">
+    <Container className="root">
       <ImageList className="imageList" >
         <ImageListItem key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader  className="listTitle" component="div">Users</ListSubheader>
@@ -210,7 +211,7 @@ function App(props) {
           <ListSubheader className="listFooter" component="div">Total: {total}</ListSubheader>
         </ImageListItem>
     </ImageList>
-  </div>
+  </Container>
   );
 }
 
