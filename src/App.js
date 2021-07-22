@@ -131,7 +131,6 @@ function App(props) {
     }).catch(function(error) {
       console.log(error);
       showAlert("Error creating user", "error")
-      setSeverity('error')
       setLoading(false)
   });
     setOpen(false);
@@ -205,7 +204,6 @@ function App(props) {
           avatar={item.avatar}
           name={item.first_name + " " + item.last_name}
           email={item.email}
-          onClose={handleClose}
        />
       ))}
       <ImageListItem key="Subfooter" cols={2} style={{ height: 'auto' }}>

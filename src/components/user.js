@@ -42,7 +42,7 @@ function User(props){
     };
     
     const handleClose = () => {
-    setOpen(false);
+        setOpen(false);
     };
 
     const handleSnackClose = () => {
